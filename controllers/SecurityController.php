@@ -25,6 +25,7 @@ use yii\filters\VerbFilter;
 use yii\helpers\Url;
 use yii\web\Controller;
 use yii\web\Response;
+use elephantsGroup\base\EGController;
 
 /**
  * Controller that manages user authentication process.
