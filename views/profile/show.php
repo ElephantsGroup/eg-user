@@ -19,9 +19,9 @@ use yii\helpers\Html;
 $this->title = empty($profile->name) ? Html::encode($profile->user->username) : Html::encode($profile->name);
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="row">
-    <div class="col-xs-12 col-sm-6 col-md-6">
-        <div class="row">
+<section id="profile">
+    <div class="container">
+        <div class="row profile-details">
             <div class="col-sm-6 col-md-4">
                 <?= Html::img($profile->getAvatarUrl(230), [
                     'class' => 'img-rounded img-responsive',
@@ -56,4 +56,4 @@ $this->params['breadcrumbs'][] = $this->title;
             </div>
         </div>
     </div>
-</div>
+</section>
