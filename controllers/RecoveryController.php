@@ -17,8 +17,8 @@ use dektrium\user\models\Token;
 use dektrium\user\traits\AjaxValidationTrait;
 use dektrium\user\traits\EventTrait;
 use yii\filters\AccessControl;
-use yii\web\Controller;
 use yii\web\NotFoundHttpException;
+use elephantsGroup\base\EGController;
 
 /**
  * RecoveryController manages password recovery process.
@@ -27,7 +27,7 @@ use yii\web\NotFoundHttpException;
  *
  * @author Dmitry Erofeev <dmeroff@gmail.com>
  */
-class RecoveryController extends Controller
+class RecoveryController extends EGController
 {
     use AjaxValidationTrait;
     use EventTrait;

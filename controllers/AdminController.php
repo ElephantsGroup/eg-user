@@ -26,11 +26,11 @@ use yii\base\Module as Module2;
 use yii\filters\AccessControl;
 use yii\filters\VerbFilter;
 use yii\helpers\Url;
-use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\web\ForbiddenHttpException;
 use yii\web\Response;
 use yii\widgets\ActiveForm;
+use elephantsGroup\base\EGController;
 
 /**
  * AdminController allows you to administrate users.
@@ -39,7 +39,7 @@ use yii\widgets\ActiveForm;
  *
  * @author Dmitry Erofeev <dmeroff@gmail.com
  */
-class AdminController extends Controller
+class AdminController extends EGController
 {
     use EventTrait;
 

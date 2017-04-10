@@ -18,8 +18,8 @@ use dektrium\user\models\User;
 use dektrium\user\traits\AjaxValidationTrait;
 use dektrium\user\traits\EventTrait;
 use yii\filters\AccessControl;
-use yii\web\Controller;
 use yii\web\NotFoundHttpException;
+use elephantsGroup\base\EGController;
 
 /**
  * RegistrationController is responsible for all registration process, which includes registration of a new account,
@@ -29,7 +29,7 @@ use yii\web\NotFoundHttpException;
  *
  * @author Dmitry Erofeev <dmeroff@gmail.com>
  */
-class RegistrationController extends Controller
+class RegistrationController extends EGController
 {
     use AjaxValidationTrait;
     use EventTrait;

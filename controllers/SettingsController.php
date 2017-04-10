@@ -20,9 +20,9 @@ use dektrium\user\traits\AjaxValidationTrait;
 use dektrium\user\traits\EventTrait;
 use yii\filters\AccessControl;
 use yii\filters\VerbFilter;
-use yii\web\Controller;
 use yii\web\ForbiddenHttpException;
 use yii\web\NotFoundHttpException;
+use elephantsGroup\base\EGController;
 
 /**
  * SettingsController manages updating user settings (e.g. profile, email and password).
@@ -31,7 +31,7 @@ use yii\web\NotFoundHttpException;
  *
  * @author Dmitry Erofeev <dmeroff@gmail.com>
  */
-class SettingsController extends Controller
+class SettingsController extends EGController
 {
     use AjaxValidationTrait;
     use EventTrait;

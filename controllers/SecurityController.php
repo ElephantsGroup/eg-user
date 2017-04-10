@@ -23,7 +23,6 @@ use yii\authclient\ClientInterface;
 use yii\filters\AccessControl;
 use yii\filters\VerbFilter;
 use yii\helpers\Url;
-use yii\web\Controller;
 use yii\web\Response;
 use elephantsGroup\base\EGController;
 
@@ -34,7 +33,7 @@ use elephantsGroup\base\EGController;
  *
  * @author Dmitry Erofeev <dmeroff@gmail.com>
  */
-class SecurityController extends Controller
+class SecurityController extends EGController
 {
     use AjaxValidationTrait;
     use EventTrait;

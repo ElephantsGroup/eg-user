@@ -13,8 +13,8 @@ namespace dektrium\user\controllers;
 
 use dektrium\user\Finder;
 use yii\filters\AccessControl;
-use yii\web\Controller;
 use yii\web\NotFoundHttpException;
+use elephantsGroup\base\EGController;
 
 /**
  * ProfileController shows users profiles.
@@ -23,7 +23,7 @@ use yii\web\NotFoundHttpException;
  *
  * @author Dmitry Erofeev <dmeroff@gmail.com>
  */
-class ProfileController extends Controller
+class ProfileController extends EGController
 {
     /** @var Finder */
     protected $finder;
