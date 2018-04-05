@@ -1,21 +1,20 @@
 {
-    "name": "elephantsGroup/eg-user",
+    "name": "elephantsgroup/eg-user",
     "description": "Flexible user registration and authentication module for Yii2",
     "keywords": ["yii2", "eg-user", "user management", "elephantsGroup"],
     "type": "yii2-extension",
     "license": "MIT",
+    "authors": [
+        {
+            "name": "Jalal Jaberi",
+            "email": "proodoo@gmail.com"
+        }
+    ],
     "support": {
         "issues": "https://github.com/elephantsGroup/eg-user/issues?state=open",
         "forum": "https://gitter.im/elephantsGroup/eg-user",
         "source": "https://github.com/elephantsGroup/eg-user"
     },
-    "authors": [
-        {
-            "name": "Dmitry Erofeev",
-            "email": "dmeroff@gmail.com",
-            "homepage": "http://dmeroff.ru"
-        }
-    ],
     "minimum-stability": "dev",
     "require": {
         "php": ">=5.4.0",
