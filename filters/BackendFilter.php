@@ -1,21 +1,21 @@
 <?php
 
-/*
- * This file is part of the Dektrium project
+/**
  *
- * (c) Dektrium project <http://github.com/dektrium>
+ * @name : eg-user
+ * @Version 1.0.0
+ * @Author : Jalal Jaberi
  *
- * For the full copyright and license information, please view the LICENSE.md
- * file that was distributed with this source code.
+ * based on Dektrium user <http://github.com/dektrium>
  */
 
-namespace dektrium\user\filters;
+namespace elephantsGroup\user\filters;
 
 use yii\web\NotFoundHttpException;
 use yii\base\ActionFilter;
 
 /**
- * BackendFilter is used to allow access only to admin and security controller in frontend when using Yii2-user with
+ * BackendFilter is used to allow access only to admin and security controller in frontend when using eg-user with
  * Yii2 advanced template.
  *
  * @author Dmitry Erofeev <dmeroff@gmail.com>

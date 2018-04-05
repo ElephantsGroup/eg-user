@@ -1,6 +1,6 @@
 # Overriding views
 
-When you start using Yii2-user you will probably find that you need to override the default views provided by the module.
+When you start using eg-user you will probably find that you need to override the default views provided by the module.
 Although view names are not configurable, Yii2 provides a way to override views using themes. To get started you should
 configure your view application component as follows:
 
@@ -10,7 +10,7 @@ configure your view application component as follows:
     'view' => [
         'theme' => [
             'pathMap' => [
-                '@dektrium/user/views' => '@app/views/user'
+                '@elephantsGroup/user/views' => '@app/views/user'
             ],
         ],
     ],
@@ -18,7 +18,7 @@ configure your view application component as follows:
 ...
 ```
 
-In the above `pathMap` means that every view in @dektrium/user/views will be first searched under `@app/views/user` and
+In the above `pathMap` means that every view in @elephantsGroup/user/views will be first searched under `@app/views/user` and
 if a view exists in the theme directory it will be used instead of the original view.
 
 ## Example
@@ -37,7 +37,7 @@ use yii\widgets\ActiveForm;
 /**
  * @var yii\web\View              $this
  * @var yii\widgets\ActiveForm    $form
- * @var dektrium\user\models\User $user
+ * @var elephantsGroup\user\models\User $user
  */
 
 $this->title = Yii::t('user', 'Sign up');

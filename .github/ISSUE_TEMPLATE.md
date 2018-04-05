@@ -9,5 +9,5 @@
 | Q                 | A
 | ----------------- | ---
 | Yii2 version      |
-| Yii2-user version |
+| eg-user version |
 | PHP version       | 

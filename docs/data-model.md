@@ -1,10 +1,10 @@
 # Data Model
 
-When Yii2-user is installed the database is
-configured using the Yii2-user data model.
+When eg-user is installed the database is
+configured using the eg-user data model.
 
 It can be useful to know what's going on in the
-database when Yii2-user is integrated your application.
+database when eg-user is integrated your application.
 
 ## Entity Relation Diagram
 

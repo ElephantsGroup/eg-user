@@ -1,21 +1,21 @@
 <?php
 
-/*
- * This file is part of the Dektrium project
+/**
  *
- * (c) Dektrium project <http://github.com/dektrium>
+ * @name : eg-user
+ * @Version 1.0.0
+ * @Author : Jalal Jaberi
  *
- * For the full copyright and license information, please view the LICENSE.md
- * file that was distributed with this source code.
+ * based on Dektrium user <http://github.com/dektrium>
  */
 
 /**
  * @var yii\web\View $this
- * @var dektrium\user\models\User $user
+ * @var elephantsGroup\user\models\User $user
  */
 ?>
 
-<?php $this->beginContent('@dektrium/user/views/admin/update.php', ['user' => $user]) ?>
+<?php $this->beginContent('@elephantsGroup/user/views/admin/update.php', ['user' => $user]) ?>
 
 <table class="table">
     <tr>

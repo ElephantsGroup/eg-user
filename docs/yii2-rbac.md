@@ -1,7 +1,7 @@
 # Powerful RBAC with Yii2-rbac
 
 Yii2-rbac is another extension for Yii2 which provides CRUD operations for RBAC
-and also is highly integrated with Yii2-user and allows to assign roles and
+and also is highly integrated with eg-user and allows to assign roles and
 permissions to users.
 
 ## Installation

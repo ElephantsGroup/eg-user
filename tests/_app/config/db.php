@@ -2,7 +2,7 @@
 
 $db = [
     'class' => 'yii\db\Connection',
-    'dsn' => 'mysql:host=localhost;dbname=dektrium_test',
+    'dsn' => 'mysql:host=localhost;dbname=elephantsGroup_test',
     'username' => 'root',
     'password' => '',
     'charset' => 'utf8',

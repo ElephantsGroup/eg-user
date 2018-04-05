@@ -7,11 +7,11 @@ This page provides a list of common problems and the ways of solving them.
 You probably haven't removed `user` from component section of your application.
 
 If you need to have custom `user` component, then you should configure it to use
-Yii2-user identity class:
+eg-user identity class:
 
 ```php
 'user' => [
     'class' => 'app\components\User',
-    'identityClass' => 'dektrium\user\models\User',
+    'identityClass' => 'elephantsGroup\user\models\User',
 ],
 ```

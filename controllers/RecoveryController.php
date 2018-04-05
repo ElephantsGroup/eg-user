@@ -1,21 +1,21 @@
 <?php
 
-/*
- * This file is part of the Dektrium project.
+/**
  *
- * (c) Dektrium project <http://github.com/dektrium/>
+ * @name : eg-user
+ * @Version 1.0.0
+ * @Author : Jalal Jaberi
  *
- * For the full copyright and license information, please view the LICENSE
- * file that was distributed with this source code.
+ * based on Dektrium user <http://github.com/dektrium>
  */
 
-namespace dektrium\user\controllers;
+namespace elephantsGroup\user\controllers;
 
-use dektrium\user\Finder;
-use dektrium\user\models\RecoveryForm;
-use dektrium\user\models\Token;
-use dektrium\user\traits\AjaxValidationTrait;
-use dektrium\user\traits\EventTrait;
+use elephantsGroup\user\Finder;
+use elephantsGroup\user\models\RecoveryForm;
+use elephantsGroup\user\models\Token;
+use elephantsGroup\user\traits\AjaxValidationTrait;
+use elephantsGroup\user\traits\EventTrait;
 use yii\filters\AccessControl;
 use yii\web\NotFoundHttpException;
 use elephantsGroup\base\EGController;
@@ -23,7 +23,7 @@ use elephantsGroup\base\EGController;
 /**
  * RecoveryController manages password recovery process.
  *
- * @property \dektrium\user\Module $module
+ * @property \elephantsGroup\user\Module $module
  *
  * @author Dmitry Erofeev <dmeroff@gmail.com>
  */
@@ -34,37 +34,37 @@ class RecoveryController extends EGController
 
     /**
      * Event is triggered before requesting password reset.
-     * Triggered with \dektrium\user\events\FormEvent.
+     * Triggered with \elephantsGroup\user\events\FormEvent.
      */
     const EVENT_BEFORE_REQUEST = 'beforeRequest';
 
     /**
      * Event is triggered after requesting password reset.
-     * Triggered with \dektrium\user\events\FormEvent.
+     * Triggered with \elephantsGroup\user\events\FormEvent.
      */
     const EVENT_AFTER_REQUEST = 'afterRequest';
 
     /**
      * Event is triggered before validating recovery token.
-     * Triggered with \dektrium\user\events\ResetPasswordEvent. May not have $form property set.
+     * Triggered with \elephantsGroup\user\events\ResetPasswordEvent. May not have $form property set.
      */
     const EVENT_BEFORE_TOKEN_VALIDATE = 'beforeTokenValidate';
 
     /**
      * Event is triggered after validating recovery token.
-     * Triggered with \dektrium\user\events\ResetPasswordEvent. May not have $form property set.
+     * Triggered with \elephantsGroup\user\events\ResetPasswordEvent. May not have $form property set.
      */
     const EVENT_AFTER_TOKEN_VALIDATE = 'afterTokenValidate';
 
     /**
      * Event is triggered before resetting password.
-     * Triggered with \dektrium\user\events\ResetPasswordEvent.
+     * Triggered with \elephantsGroup\user\events\ResetPasswordEvent.
      */
     const EVENT_BEFORE_RESET = 'beforeReset';
 
     /**
      * Event is triggered after resetting password.
-     * Triggered with \dektrium\user\events\ResetPasswordEvent.
+     * Triggered with \elephantsGroup\user\events\ResetPasswordEvent.
      */
     const EVENT_AFTER_RESET = 'afterReset';
 

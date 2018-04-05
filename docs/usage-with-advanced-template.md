@@ -1,4 +1,4 @@
-# Yii2-user with Yii2 advanced template
+# eg-user with Yii2 advanced template
 
 When using advanced template, you may want to have AdminController only available in backend, and all other controllers available in frontend. This guide will help you with implementing this.
 
@@ -13,7 +13,7 @@ Let's start with defining module in `@common/config/main.php`:
 ```php
 'modules' => [
     'user' => [
-        'class' => 'dektrium\user\Module',
+        'class' => 'elephantsGroup\user\Module',
         // you will configure your module inside this file
         // or if need different configuration for frontend and backend you may
         // configure in needed configs
@@ -27,7 +27,7 @@ Restrict access to admin controller from frontend. Open `@frontend/config/main.p
 'modules' => [
     'user' => [
         // following line will restrict access to admin controller from frontend application
-        'as frontend' => 'dektrium\user\filters\FrontendFilter',
+        'as frontend' => 'elephantsGroup\user\filters\FrontendFilter',
     ],
 ],
 ```
@@ -38,7 +38,7 @@ Restrict access to profile, recovery, registration and settings controllers from
 'modules' => [
     'user' => [
         // following line will restrict access to profile, recovery, registration and settings controllers from backend
-        'as backend' => 'dektrium\user\filters\BackendFilter',
+        'as backend' => 'elephantsGroup\user\filters\BackendFilter',
     ],
 ],
 ```

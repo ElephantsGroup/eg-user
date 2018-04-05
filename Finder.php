@@ -1,18 +1,18 @@
 <?php
 
-/*
- * This file is part of the Dektrium project.
+/**
  *
- * (c) Dektrium project <http://github.com/dektrium/>
+ * @name : eg-user
+ * @Version 1.0.0
+ * @Author : Jalal Jaberi
  *
- * For the full copyright and license information, please view the LICENSE
- * file that was distributed with this source code.
+ * based on Dektrium user <http://github.com/dektrium>
  */
 
-namespace dektrium\user;
+namespace elephantsGroup\user;
 
-use dektrium\user\models\query\AccountQuery;
-use dektrium\user\models\Token;
+use elephantsGroup\user\models\query\AccountQuery;
+use elephantsGroup\user\models\Token;
 use yii\authclient\ClientInterface;
 use yii\base\BaseObject;
 use yii\db\ActiveQuery;

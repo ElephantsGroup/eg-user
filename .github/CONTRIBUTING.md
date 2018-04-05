@@ -1,4 +1,4 @@
-# Contributing to Yii2-user
+# Contributing to eg-user
 
 Please take a moment to review this document in order to make the contribution process easy and effective for everyone
 involved.
@@ -7,9 +7,9 @@ Following these guidelines helps to communicate that you respect the time of the
 this open source project. In return, they should reciprocate that respect in addressing your issue or assessing
 patches and features.
 
-## Do you have a question or problem with using Yii2-user?
+## Do you have a question or problem with using eg-user?
 
-Ask any question about how to use Yii2-user on [our forum](http://dektrium.com).
+Ask any question about how to use eg-user on [our forum](http://dektrium.com).
 
 ## Did you find a security issue?
 

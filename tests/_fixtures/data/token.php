@@ -1,6 +1,6 @@
 <?php
 
-use \dektrium\user\models\Token;
+use \elephantsGroup\user\models\Token;
 
 $time = time();
 

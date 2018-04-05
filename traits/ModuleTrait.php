@@ -1,15 +1,16 @@
 <?php
 
-namespace dektrium\user\traits;
+namespace elephantsGroup\user\traits;
 
-use dektrium\user\Module;
+use elephantsGroup\user\Module;
 
 /**
  * Trait ModuleTrait
  *
  * @property-read Module $module
- * @package dektrium\user\traits
+ * @package elephantsGroup\user\traits
  */
+
 trait ModuleTrait
 {
     /**

@@ -57,7 +57,7 @@ If this option is to `true`, users will be able to completely delete their accou
 
 ---
 
-#### emailChangeStrategy (Type: `integer`, Default value: `\dektrium\user\Module::STRATEGY_DEFAULT`)
+#### emailChangeStrategy (Type: `integer`, Default value: `\elephantsGroup\user\Module::STRATEGY_DEFAULT`)
 
 When user tries change his password, there are three ways how this change will
 happen:
@@ -93,7 +93,7 @@ time user have to request new recovery message.
 
 #### admins (Type: `array`, Default value: `[]`)
 
-Yii2-user has special admin pages where you can manager registered users or
+eg-user has special admin pages where you can manager registered users or
 create new user accounts. You can specify the username of users that will be
 able to access those pages. The most permissive of `admins` and `adminPermission`
 will determine access.
@@ -102,7 +102,7 @@ will determine access.
 
 #### adminPermission (Type: `string`, Default value: `null`)
 
-Yii2-user has special admin pages where you can manager registered users or
+eg-user has special admin pages where you can manager registered users or
 create new user accounts. You can specify the existing RBAC permission that will
 allow a user to be able to access those pages. The most permissive of `admins`
 and `adminPermission` will determine access.
@@ -143,7 +143,7 @@ The configuration should be applied in your main configuration file:
 'modules' => [
     ...
     'user' => [
-        'class' => 'dektrium\user\Module',
+        'class' => 'elephantsGroup\user\Module',
         'enableUnconfirmedLogin' => true,
         'confirmWithin' => 21600,
         'cost' => 12,

@@ -7,10 +7,10 @@ You can change controller's layout using `controllerMap` module's property:
 ```php
 'modules' => [
     'user' => [
-        'class' => 'dektrium\user\Module',
+        'class' => 'elephantsGroup\user\Module',
         'controllerMap' => [
             'admin' => [
-                'class'  => 'dektrium\user\controllers\AdminController',
+                'class'  => 'elephantsGroup\user\controllers\AdminController',
                 'layout' => '//admin-layout',
             ],
         ],
@@ -33,14 +33,14 @@ You can use Login widget to achieve this:
 ```php
 <?php
 
-use dektrium\user\widgets\Login;
+use elephantsGroup\user\widgets\Login;
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 
 /**
  * @var yii\web\View              $this
- * @var dektrium\user\models\User $user
- * @var dektrium\user\Module      $module
+ * @var elephantsGroup\user\models\User $user
+ * @var elephantsGroup\user\Module      $module
  */
 
 $this->title = Yii::t('user', 'Sign up');

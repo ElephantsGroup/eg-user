@@ -1,6 +1,6 @@
 # Authentication via social networks
 
-Yii2-user provides user registration and login using social sites credentials. It
+eg-user provides user registration and login using social sites credentials. It
 also allows to connect multiple social networks to user account and use them to
 log in.
 
@@ -42,7 +42,7 @@ Here is the list of clients supported by the module:
 
 ```php
 'facebook' => [
-    'class'        => 'dektrium\user\clients\Facebook',
+    'class'        => 'elephantsGroup\user\clients\Facebook',
     'clientId'     => 'APP_ID',
     'clientSecret' => 'APP_SECRET',
 ],
@@ -56,7 +56,7 @@ Here is the list of clients supported by the module:
 
 ```php
 'twitter' => [
-    'class'          => 'dektrium\user\clients\Twitter',
+    'class'          => 'elephantsGroup\user\clients\Twitter',
     'consumerKey'    => 'CONSUMER_KEY',
     'consumerSecret' => 'CONSUMER_SECRET',
 ],
@@ -65,7 +65,7 @@ Here is the list of clients supported by the module:
 
 ```php
 'twitter' => [
-    'class'          => 'dektrium\user\clients\Twitter',
+    'class'          => 'elephantsGroup\user\clients\Twitter',
     'consumerKey'    => 'CONSUMER_KEY',
     'consumerSecret' => 'CONSUMER_SECRET',
     'attributeParams' => [
@@ -84,7 +84,7 @@ Here is the list of clients supported by the module:
 
 ```php
 'google' => [
-    'class'        => 'dektrium\user\clients\Google',
+    'class'        => 'elephantsGroup\user\clients\Google',
     'clientId'     => 'CLIENT_ID',
     'clientSecret' => 'CLIENT_SECRET',
 ],
@@ -96,7 +96,7 @@ Here is the list of clients supported by the module:
 
 ```php
 'github' => [
-    'class'        => 'dektrium\user\clients\GitHub',
+    'class'        => 'elephantsGroup\user\clients\GitHub',
     'clientId'     => 'CLIENT_ID',
     'clientSecret' => 'CLIENT_SECRET',
 ],
@@ -108,7 +108,7 @@ Here is the list of clients supported by the module:
 
 ```php
 'vkontakte' => [
-    'class'        => 'dektrium\user\clients\VKontakte',
+    'class'        => 'elephantsGroup\user\clients\VKontakte',
     'clientId'     => 'CLIENT_ID',
     'clientSecret' => 'CLIENT_SECRET',
 ]
@@ -122,7 +122,7 @@ Here is the list of clients supported by the module:
 
 ```php
 'yandex' => [
-    'class'        => 'dektrium\user\clients\Yandex',
+    'class'        => 'elephantsGroup\user\clients\Yandex',
     'clientId'     => 'CLIENT_ID',
     'clientSecret' => 'CLIENT_SECRET'
 ],
@@ -134,7 +134,7 @@ Here is the list of clients supported by the module:
 
 ```php
 'linkedin' => [
-    'class'        => 'dektrium\user\clients\LinkedIn',
+    'class'        => 'elephantsGroup\user\clients\LinkedIn',
     'clientId'     => 'CLIENT_ID',
     'clientSecret' => 'CLIENT_SECRET'
 ],
@@ -142,7 +142,7 @@ Here is the list of clients supported by the module:
 
 ### Other networks
 
-Yii2-user also supports all social networks provied by [Yii2-authclient](https://github.com/yiisoft/yii2-authclient) extension.
+eg-user also supports all social networks provied by [Yii2-authclient](https://github.com/yiisoft/yii2-authclient) extension.
 However it does not support registration without entering email and username after authenticating via network.
 
 ## Configuration example
@@ -154,17 +154,17 @@ The following config allows to log in using 3 networks (Twitter, Facebook and Go
     'class' => yii\authclient\Collection::className(),
     'clients' => [
         'facebook' => [
-            'class'        => 'dektrium\user\clients\Facebook',
+            'class'        => 'elephantsGroup\user\clients\Facebook',
             'clientId'     => 'CLIENT_ID',
             'clientSecret' => 'CLIENT_SECRET',
         ],
         'twitter' => [
-            'class'          => 'dektrium\user\clients\Twitter',
+            'class'          => 'elephantsGroup\user\clients\Twitter',
             'consumerKey'    => 'CONSUMER_KEY',
             'consumerSecret' => 'CONSUMER_SECRET',
         ],
         'google' => [
-            'class'        => 'dektrium\user\clients\Google',
+            'class'        => 'elephantsGroup\user\clients\Google',
             'clientId'     => 'CLIENT_ID',
             'clientSecret' => 'CLIENT_SECRET',
         ],
@@ -181,7 +181,7 @@ with the name provided via facebook:
 // plase this code somewhere in your config files (bootstrap.php in case of using advanced app template, web.php in case
 // of using basic app template
 
-use dektrium\user\controllers\SecurityController; 
+use elephantsGroup\user\controllers\SecurityController; 
 
 Event::on(SecurityController::class, SecurityController::EVENT_AFTER_AUTHENTICATE, function (AuthEvent $e) {
     // if user account was not created we should not continue

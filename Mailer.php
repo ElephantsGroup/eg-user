@@ -1,18 +1,18 @@
 <?php
 
-/*
- * This file is part of the Dektrium project.
+/**
  *
- * (c) Dektrium project <http://github.com/dektrium/>
+ * @name : eg-user
+ * @Version 1.0.0
+ * @Author : Jalal Jaberi
  *
- * For the full copyright and license information, please view the LICENSE
- * file that was distributed with this source code.
+ * based on Dektrium user <http://github.com/dektrium>
  */
 
-namespace dektrium\user;
+namespace elephantsGroup\user;
 
-use dektrium\user\models\Token;
-use dektrium\user\models\User;
+use elephantsGroup\user\models\Token;
+use elephantsGroup\user\models\User;
 use Yii;
 use yii\base\Component;
 
@@ -24,7 +24,7 @@ use yii\base\Component;
 class Mailer extends Component
 {
     /** @var string */
-    public $viewPath = '@dektrium/user/views/mail';
+    public $viewPath = '@elephantsGroup/user/views/mail';
 
     /** @var string|array Default: `Yii::$app->params['adminEmail']` OR `no-reply@example.com` */
     public $sender;
@@ -47,7 +47,7 @@ class Mailer extends Component
     /** @var string */
     protected $recoverySubject;
 
-    /** @var \dektrium\user\Module */
+    /** @var \elephantsGroup\user\Module */
     protected $module;
 
     /**

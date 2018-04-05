@@ -1,15 +1,15 @@
 <?php
 
-/*
- * This file is part of the Dektrium project
+/**
  *
- * (c) Dektrium project <http://github.com/dektrium>
+ * @name : eg-user
+ * @Version 1.0.0
+ * @Author : Jalal Jaberi
  *
- * For the full copyright and license information, please view the LICENSE.md
- * file that was distributed with this source code.
+ * based on Dektrium user <http://github.com/dektrium>
  */
 
-namespace dektrium\user\clients;
+namespace elephantsGroup\user\clients;
 
 use Yii;
 use yii\authclient\clients\Yandex as BaseYandex;

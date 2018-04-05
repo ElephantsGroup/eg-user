@@ -1,19 +1,19 @@
 <?php
 
-/*
- * This file is part of the Dektrium project.
+/**
  *
- * (c) Dektrium project <http://github.com/dektrium>
+ * @name : eg-user
+ * @Version 1.0.0
+ * @Author : Jalal Jaberi
  *
- * For the full copyright and license information, please view the LICENSE.md
- * file that was distributed with this source code.
+ * based on Dektrium user <http://github.com/dektrium>
  */
 
 use yii\bootstrap\Nav;
 
 /**
  * @var \yii\web\View $this
- * @var \dektrium\user\models\User $user
+ * @var \elephantsGroup\user\models\User $user
  * @var string $content
  */
 
@@ -47,7 +47,7 @@ $this->params['breadcrumbs'][] = $this->title;
                         [
                             'label' => Yii::t('user', 'Assignments'),
                             'url' => ['/user/admin/assignments', 'id' => $user->id],
-                            'visible' => isset(Yii::$app->extensions['dektrium/yii2-rbac']),
+                            'visible' => isset(Yii::$app->extensions['elephantsGroup/yii2-rbac']),
                         ],
                         '<hr>',
                         [

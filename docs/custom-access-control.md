@@ -1,6 +1,6 @@
 # Simpler RBAC using custom access control filter
 
-Yii2-user comes with access control rule which adds support of `admin` role which allows access to users
+eg-user comes with access control rule which adds support of `admin` role which allows access to users
 added to `admins` property of the module.
 
 ## Apply filter to your controller
@@ -13,7 +13,7 @@ Here is an example of how to use access rule in your access control filter:
 namespace app\controllers;
 
 use yii\filters\AccessControl;
-use dektrium\user\filters\AccessRule;
+use elephantsGroup\user\filters\AccessRule;
 use yii\web\Controller;
 
 class SiteController extends Controller

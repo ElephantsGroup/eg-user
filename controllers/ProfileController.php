@@ -1,17 +1,17 @@
 <?php
 
-/*
- * This file is part of the Dektrium project.
+/**
  *
- * (c) Dektrium project <http://github.com/dektrium/>
+ * @name : eg-user
+ * @Version 1.0.0
+ * @Author : Jalal Jaberi
  *
- * For the full copyright and license information, please view the LICENSE
- * file that was distributed with this source code.
+ * based on Dektrium user <http://github.com/dektrium>
  */
 
-namespace dektrium\user\controllers;
+namespace elephantsGroup\user\controllers;
 
-use dektrium\user\Finder;
+use elephantsGroup\user\Finder;
 use yii\filters\AccessControl;
 use yii\web\NotFoundHttpException;
 use elephantsGroup\base\EGController;
@@ -19,7 +19,7 @@ use elephantsGroup\base\EGController;
 /**
  * ProfileController shows users profiles.
  *
- * @property \dektrium\user\Module $module
+ * @property \elephantsGroup\user\Module $module
  *
  * @author Dmitry Erofeev <dmeroff@gmail.com>
  */

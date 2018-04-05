@@ -1,6 +1,6 @@
 # Overriding controllers
 
-The default Yii2-user controllers provide a lot of functionality that is sufficient for general use cases. But sometimes
+The default eg-user controllers provide a lot of functionality that is sufficient for general use cases. But sometimes
 you may need to extend that functionality and add some logic that suits your needs.
 
 > **NOTE:** Overriding the controller requires to duplicate all the logic of the action. Most of the time, it is easier to use
@@ -13,12 +13,12 @@ First of all you should create new controller under your own namespace (it is re
 and extend it from the controller you want to override.
 
 For example, if you want to override AdminController you should create `app\controllers\user\AdminController` and extend
-it from `dektrium\user\controllers\AdminController`:
+it from `elephantsGroup\user\controllers\AdminController`:
 
 ```php
 namespace app\controllers\user;
 
-use dektrium\user\controllers\AdminController as BaseAdminController;
+use elephantsGroup\user\controllers\AdminController as BaseAdminController;
 
 class AdminController extends BaseAdminController
 {
@@ -31,14 +31,14 @@ class AdminController extends BaseAdminController
 
 ## Step 2: Add your controller to controller map
 
-To let Yii2-user know about your controller, you should add it to the module's controller map, as follows:
+To let eg-user know about your controller, you should add it to the module's controller map, as follows:
 
 ```php
 ...
 'modules' => [
     ...
     'user' => [
-        'class' => 'dektrium\user\Module',
+        'class' => 'elephantsGroup\user\Module',
         'controllerMap' => [
             'admin' => 'app\controllers\user\AdminController'
         ],

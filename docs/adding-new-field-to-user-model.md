@@ -1,7 +1,7 @@
 # Adding new field to user model
 
 Suppose, you need to add new field to `User` model which will be editable in
-admin panel. Unfortunately at the moment Yii2-user does not support adding new
+admin panel. Unfortunately at the moment eg-user does not support adding new
 fields to the registration form.
 
 ## Create new migration
@@ -32,7 +32,7 @@ And now you can apply that migration by running `php yii migrate`.
 Override `User` model as described in [guide](overriding-models.md) and add following lines to the overridden model:
 
 ```php
-class User extends \dektrium\user\models\User
+class User extends \elephantsGroup\user\models\User
 {
     public function scenarios()
     {
@@ -58,7 +58,7 @@ class User extends \dektrium\user\models\User
 
 ## Adding field to the admin form
 
-You should override view file `@dektrium/user/views/admin/_user.php` as described in [special guide](overriding-views.md)
+You should override view file `@elephantsGroup/user/views/admin/_user.php` as described in [special guide](overriding-views.md)
 with the following content:
 
 ```php
@@ -66,7 +66,7 @@ with the following content:
 
 /**
  * @var yii\widgets\ActiveForm    $form
- * @var dektrium\user\models\User $user
+ * @var elephantsGroup\user\models\User $user
  */
 
 ?>
@@ -84,7 +84,7 @@ overriding registration form. Since all the fields of registration form are pass
 a field and appropriate validation rules:
 
 ```php
-class RegistrationForm extends \dektrium\user\models\RegistrationForm
+class RegistrationForm extends \elephantsGroup\user\models\RegistrationForm
 {
     /**
      * @var string
@@ -113,7 +113,7 @@ use yii\widgets\ActiveForm;
 /**
  * @var yii\web\View              $this
  * @var yii\widgets\ActiveForm    $form
- * @var dektrium\user\models\User $user
+ * @var elephantsGroup\user\models\User $user
  */
 
 $this->title = Yii::t('user', 'Sign up');
