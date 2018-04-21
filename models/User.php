@@ -326,7 +326,8 @@ class User extends ActiveRecord implements IdentityInterface
                 $token->link('user', $this);
             }
 
-            $this->mailer->sendWelcomeMessage($this, isset($token) ? $token : null);
+            if ($this->module->enableWelcomMessage)
+				$this->mailer->sendWelcomeMessage($this, isset($token) ? $token : null);
             $this->trigger(self::AFTER_REGISTER);
 
             $transaction->commit();

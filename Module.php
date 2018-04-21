@@ -45,6 +45,9 @@ class Module extends BaseModule
     /** @var bool Whether user has to confirm his account. */
     public $enableConfirmation = true;
 
+    /** @var bool Whether user has to confirm his account. */
+    public $enableWelcomMessage = true;
+
     /** @var bool Whether to allow logging in without confirmation. */
     public $enableUnconfirmedLogin = false;
 
