@@ -258,8 +258,7 @@ class User extends ActiveRecord implements IdentityInterface
     }
 
     /**
-     * Creates new user account. If Module::enableGeneratingPassword is set true, this method
-	 * will generate password.
+     * Creates new user account. It generates password if it is not provided by user.
      *
      * @return bool
      */
@@ -272,7 +271,7 @@ class User extends ActiveRecord implements IdentityInterface
         $transaction = $this->getDb()->beginTransaction();
 
         try {
-            $this->password = ($this->password == null && $this->module->enableGeneratingPassword) ? Password::generate(8) : $this->password;
+            $this->password = $this->password == null ? Password::generate(8) : $this->password;
 
             $this->trigger(self::BEFORE_CREATE);
 
