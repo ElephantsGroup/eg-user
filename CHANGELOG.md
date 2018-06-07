@@ -3,6 +3,8 @@
 # developement
 
 - add admin account in migration/up
+- add user_management auth in migration/up
+  - assign user_management to created admin user
 - changed CHANGELOG (this file)
 
 ## v1.0.2 [14 May 2018]
