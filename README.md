@@ -1,34 +1,19 @@
-# eg-user [![Build Status](https://img.shields.io/travis/dektrium/eg-user/master.svg?style=flat-square)](https://travis-ci.org/dektrium/eg-user) [![Packagist Version](https://img.shields.io/packagist/v/dektrium/eg-user.svg?style=flat-square)](https://packagist.org/packages/dektrium/eg-user) [![Total Downloads](https://img.shields.io/packagist/dt/dektrium/eg-user.svg?style=flat-square)](https://packagist.org/packages/dektrium/eg-user) [![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](LICENSE.md)
+# eg-user
+[![Build Status](https://img.shields.io/travis/elephantsgroup/eg-user/master.svg?style=flat-square)](https://travis-ci.org/elephantsgroup/eg-user)
+[![Packagist Version](https://img.shields.io/packagist/v/elephantsgroup/eg-user.svg?style=flat-square)](https://packagist.org/packages/elephantsgroup/eg-user)
+[![PHP Version](https://img.shields.io/packagist/php-v/elephantsgroup/eg-user.svg?style=flat-square)](https://packagist.org/packages/elephantsgroup/eg-user)
+[![Website](https://img.shields.io/website-up-down-green-red/http/shields.io.svg?label=my-website&style=flat-square)](http://elephantsgroup.com)
+[![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](LICENSE.md)
 
-Most of web applications provide a way for users to register, log in or reset
-their forgotten passwords. Rather than re-implementing this on each application,
-you can use Yii2eg-user which is a flexible user management module for Yii2 that
-handles common tasks such as registration, authentication and password retrieval.
-The latest version includes following features:
-
-* Registration with an optional confirmation per mail
-* Registration via social networks
-* Password recovery
-* Account and profile management
-* Console commands
-* User management interface
-* Ability to impersonate as another user given admin access is available
-
-> **NOTE:** Module is in initial development. Anything may change at any time.
+user management module for Yii2 based on [dektrium Yii2-user](https://github.com/dektrium/yii2-user) integrated with other Elephantsgroup Yii2 modules.
 
 ## Documentation
 
 [Read the Documentation for master](docs/README.md)
 
-[Read the Documentation for v0.9.12](https://github.com/dektrium/eg-user/blob/0.9.12/docs/README.md)
-
 ## Installation
 
 All installation instructions are located in documentation.
-
-## Support
-
-If you have any questions or problems with eg-user you can ask them on [our forum](http://dektrium.com).
 
 ## Contributing to this project
 
