@@ -34,14 +34,14 @@ class m180607_205302_add_user_management extends Migration
 			if (!$query->from('{{%auth_item}}')->where(['name' => 'user_manager'])->exists())
 				$this->insert('{{%auth_item}}', [
 					'name'			=> 'user_manager',
-					'type'			=> 2,
+					'type'			=> 1,
 					'created_at'	=> time(),
 					'updated_at'	=> time()
 				]);
 			if (!$query->from('{{%auth_item}}')->where(['name' => 'administrator'])->exists())
 				$this->insert('{{%auth_item}}', [
 					'name'			=> 'administrator',
-					'type'			=> 2,
+					'type'			=> 1,
 					'created_at'	=> time(),
 					'updated_at'	=> time()
 				]);
