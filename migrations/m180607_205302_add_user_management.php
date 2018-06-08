@@ -45,6 +45,13 @@ class m180607_205302_add_user_management extends Migration
 					'created_at'	=> time(),
 					'updated_at'	=> time()
 				]);
+			if (!$query->from('{{%auth_item}}')->where(['name' => '/site/*'])->exists())
+				$this->insert('{{%auth_item}}', [
+					'name'			=> '/site/*',
+					'type'			=> 2,
+					'created_at'	=> time(),
+					'updated_at'	=> time()
+				]);
 		}
         if ($db->schema->getTableSchema("{{%auth_item_child}}", true) !== null)
 		{
@@ -62,6 +69,11 @@ class m180607_205302_add_user_management extends Migration
 				$this->insert('{{%auth_item_child}}', [
 					'parent'	=> 'administrator',
 					'child'		=> 'user_manager'
+				]);
+			if (!$query->from('{{%auth_item_child}}')->where(['parent' => 'administrator', 'child' => '/site/*'])->exists())
+				$this->insert('{{%auth_item_child}}', [
+					'parent'	=> 'administrator',
+					'child'		=> '/site/*'
 				]);
 		}
         if ($db->schema->getTableSchema("{{%auth_assignment}}", true) !== null)
