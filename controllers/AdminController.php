@@ -175,7 +175,7 @@ class AdminController extends EGController
                     'switch'          => ['post'],
                 ],
             ],
-            'access' => [
+            /*'access' => [
                 'class' => AccessControl::className(),
                 'ruleConfig' => [
                     'class' => AccessRule::className(),
@@ -191,7 +191,7 @@ class AdminController extends EGController
                         'roles' => ['admin'],
                     ],
                 ],
-            ],
+            ],*/
         ];
     }
 
