@@ -48,7 +48,11 @@ $this->params['breadcrumbs'][] = $this->title;
                     'validateOnBlur' => false,
                 ]); ?>
 
-                <?= $form->field($model, 'name') ?>
+                <?= $form->field($model, 'first_name') ?>
+
+                <?= $form->field($model, 'last_name') ?>
+
+                <?= $form->field($model, 'mobile') ?>
 
                 <?= $form->field($model, 'public_email') ?>
 
@@ -65,10 +69,7 @@ $this->params['breadcrumbs'][] = $this->title;
                             'name'
                         )
                     ); ?>
-
-                <?= $form
-                    ->field($model, 'gravatar_email')
-                    ->hint(Html::a(Yii::t('user', 'Change your avatar at Gravatar.com'), 'http://gravatar.com')) ?>
+                <?= $form->field($model, 'image_file')->label('')->fileInput() ?>
 
                 <?= $form->field($model, 'bio')->textarea() ?>
 
