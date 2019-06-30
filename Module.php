@@ -114,6 +114,17 @@ class Module extends BaseModule
         'settings/<action:\w+>'                  => 'settings/<action>'
     ];
 
+    public $thumbIconName = 'icon.jpg';
+    public $thumbIconWidth = 80;
+    public $thumbIconHeight = 80;
+    public $thumbLargName = 'profile.jpg';
+    public $thumbLargWidth = 540;
+    public $thumbLargHeight = 540;
+    public $thumbMediumName = 'profile-m.jpg';
+    public $thumbMediumWidth = 220;
+    public $thumbMediumHeight = 220;
+
+    public $thumbSize = [];
     /**
      * @return string
      */

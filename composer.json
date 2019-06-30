@@ -23,7 +23,8 @@
         "yiisoft/yii2-authclient": "^2.1.0",
         "bower-asset/bootstrap": "3.*",
 		"npm-asset/bootstrap": "3.*",
-        "elephantsgroup/eg-base": "dev-master"
+        "elephantsgroup/eg-base": "dev-master",
+        "kosinix/grafika": "dev-master"
     },
     "require-dev": {
         "yiisoft/yii2-codeception": "^2.0.0",

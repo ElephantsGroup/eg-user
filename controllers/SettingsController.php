@@ -165,14 +165,16 @@ class SettingsController extends EGController
         $this->trigger(self::EVENT_BEFORE_PROFILE_UPDATE, $event);
         if ($model->load(\Yii::$app->request->post()))
         {
-          $model->image_file = UploadedFile::getInstance($model, 'image_file');
-          if($model->save())
-          {
-            \Yii::$app->getSession()->setFlash('success', \Yii::t('user', 'Your profile has been updated'));
-            $this->trigger(self::EVENT_AFTER_PROFILE_UPDATE, $event);
-            //return $this->refresh();
-						return $this->redirect(['profile/show', 'id' => $model->user_id]);
-          }
+            $model->image_file = UploadedFile::getInstance($model, 'image_file');
+            // $module = \Yii::$app->getModule('user');
+            // var_dump($module->thumbSize); die;
+            if($model->save())
+            {
+                \Yii::$app->getSession()->setFlash('success', \Yii::t('user', 'Your profile has been updated'));
+                $this->trigger(self::EVENT_AFTER_PROFILE_UPDATE, $event);
+                //return $this->refresh();
+    			return $this->redirect(['profile/show', 'id' => $model->user_id]);
+            }
         }
 
         return $this->render('profile', [

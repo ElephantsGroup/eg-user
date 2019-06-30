@@ -24,7 +24,7 @@ $user = Yii::$app->user->identity;
     <div class="panel-heading">
         <h3 class="panel-title">
           <?php if (!empty($user->profile['thumb']) && $user->profile['thumb'] != "default.png"): ?>
-            <?= Html::img(Profile::$upload_url . $user->profile['user_id'] . '/' . $user->profile['thumb'], [
+            <?= Html::img(Profile::$upload_url . $user->profile['user_id'] . '/' . $user->profile['thumb_size']['icon']['name'], [
                 'class' => 'img-rounded',
                 'alt' => $user->username,
             ]) ?>

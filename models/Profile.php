@@ -15,6 +15,7 @@ use elephantsGroup\user\traits\ModuleTrait;
 use yii\db\ActiveRecord;
 use Yii;
 use yii\db\ActiveQuery;
+use Grafika\Grafika;
 
 /**
  * This is the model class for table "profile".
@@ -46,12 +47,99 @@ class Profile extends ActiveRecord
     public static $upload_url;
     public static $upload_path;
 
+    public $thumb_size = [];
+
     /** @inheritdoc */
     public function init()
     {
         $this->module = \Yii::$app->getModule('user');
         self::$upload_path = str_replace('/backend', '', Yii::getAlias('@webroot')) . '/uploads/eg-user/user/';
         self::$upload_url = str_replace('/backend', '', Yii::getAlias('@web')) . '/uploads/eg-user/user/';
+
+        if(!isset($this->module->thumbSize))
+        {
+            $this->thumb_size = [
+                'icon' => [
+                    'name' => $this->module->thumbIconName,
+                    'width' => $this->module->thumbIconWidth,
+                    'height' => $this->module->thumbIconHeight
+                ],
+                'larg' => [
+                    'name' => $this->module->thumbLargName,
+                    'width' => $this->module->thumbLargWidth,
+                    'height' => $this->module->thumbLargHeight
+                ],
+                'medium' => [
+                    'name' => $this->module->thumbMediumName,
+                    'width' => $this->module->thumbMediumWidth,
+                    'height' => $this->module->thumbMediumHeight
+                ],
+            ];
+        }
+        else
+        {
+            $this->thumb_size = $this->module->thumbSize;
+
+            if(!isset($this->thumb_size['icon']))
+            {
+                $this->thumb_size['icon'] = [
+                    'name' => $this->module->thumbIconName,
+                    'width' => $this->module->thumbIconWidth,
+                    'height' => $this->module->thumbIconHeight
+                ];
+            }
+            else
+            {
+                if(!isset($this->thumb_size['icon']['name']))
+                    $this->thumb_size['icon']['name'] = $this->module->thumbIconName;
+
+                if(!isset($this->thumb_size['icon']['width']))
+                    $this->thumb_size['icon']['width'] = $this->module->thumbIconWidth;
+
+                if(!isset($this->thumb_size['icon']['height']))
+                    $this->thumb_size['icon']['height'] = $this->module->thumbIconHeight;
+            }
+
+            if(!isset($this->thumb_size['larg']))
+            {
+                $this->thumb_size['larg'] = [
+                    'name' => $this->module->thumbLargName,
+                    'width' => $this->module->thumbLargWidth,
+                    'height' => $this->module->thumbLargHeight
+                ];
+            }
+            else
+            {
+                if(!isset($this->thumb_size['larg']['name']))
+                    $this->thumb_size['larg']['name'] = $this->module->thumbLargName;
+
+                if(!isset($this->thumb_size['larg']['width']))
+                    $this->thumb_size['larg']['width'] = $this->module->thumbLargWidth;
+
+                if(!isset($this->thumb_size['larg']['height']))
+                    $this->thumb_size['larg']['height'] = $this->module->thumbLargHeight;
+            }
+
+            if(!isset($this->thumb_size['medium']))
+            {
+                $this->thumb_size['medium'] = [
+                    'name' => $this->module->thumbMediumName,
+                    'width' => $this->module->thumbMediumWidth,
+                    'height' => $this->module->thumbMediumHeight
+                ];
+            }
+            else
+            {
+                if(!isset($this->thumb_size['medium']['name']))
+                    $this->thumb_size['medium']['name'] = $this->module->thumbMediumName;
+
+                if(!isset($this->thumb_size['medium']['width']))
+                    $this->thumb_size['medium']['width'] = $this->module->thumbMediumWidth;
+
+                if(!isset($this->thumb_size['medium']['height']))
+                    $this->thumb_size['medium']['height'] = $this->module->thumbMediumHeight;
+            }
+        }
         parent::init();
     }
 
@@ -98,8 +186,8 @@ class Profile extends ActiveRecord
             [['image_file'], 'file', 'skipOnEmpty' => true, 'extensions' => 'png, jpg', 'checkExtensionByMimeType'=>false],
             [['user_id'], 'required'],
             [['thumb'], 'default', 'value'=>'default.png'],
-						[['update_time'], 'default', 'value' => (new \DateTime)->setTimestamp(time())->setTimezone(new \DateTimeZone('Iran'))->format('Y-m-d H:i:s')],
-						[['creation_time'], 'default', 'value' => (new \DateTime)->setTimestamp(time())->setTimezone(new \DateTimeZone('Iran'))->format('Y-m-d H:i:s')]
+			[['update_time'], 'default', 'value' => (new \DateTime)->setTimestamp(time())->setTimezone(new \DateTimeZone('Iran'))->format('Y-m-d H:i:s')],
+			[['creation_time'], 'default', 'value' => (new \DateTime)->setTimestamp(time())->setTimezone(new \DateTimeZone('Iran'))->format('Y-m-d H:i:s')]
         ];
     }
 
@@ -195,16 +283,40 @@ class Profile extends ActiveRecord
      */
     public function afterSave($insert, $changedAttributes)
     {
-      if($this->image_file)
-      {
-        $dir = self::$upload_path . $this->user_id . '/';
-        if(!file_exists($dir))
-          mkdir($dir, 0777, true);
-              $file_name = 'profile-' . $this->user_id . '.' . $this->image_file->extension;
-              $this->image_file->saveAs($dir . $file_name);
-              $this->updateAttributes(['thumb' => $file_name]);
-       }
-      return parent::afterSave($insert, $changedAttributes);
+        if($this->image_file)
+        {
+            $dir = self::$upload_path . $this->user_id . '/';
+            if(!file_exists($dir))
+                mkdir($dir, 0777, true);
+            $file_name = 'profile-' . $this->user_id . '.' . $this->image_file->extension;
+            $this->image_file->saveAs($dir . $file_name);
+            $this->updateAttributes(['thumb' => $file_name]);
+
+            $editor = Grafika::createEditor();
+            $editor->open( $image, self::$upload_path . $this->user_id . '/' . $this->thumb);
+            $backup = clone $image;
+            $image_center = clone $image;
+
+            $width = $image->getWidth();
+            $height = $image->getHeight();
+
+            $size = $width > $height ? $height : $width;
+
+            $editor->crop( $image_center, $size, $size, 'center' );
+            $editor->save( $image_center, self::$upload_path . $this->user_id . '/cropped-center.jpg' ); // Cropped version
+            $image = [];
+
+            foreach ($this->thumb_size as $key => $value)
+            {
+                $image[$key] = clone $image_center;
+                $editor->resizeExact( $image[$key], $value['width'], $value['height'] );
+                $editor->save( $image[$key], self::$upload_path . $this->user_id . '/' . $value['name']);
+
+            }
+
+            $editor->save( $backup, self::$upload_path . $this->user_id . '/original.jpg' ); // Unaffected by crop version
+        }
+        return parent::afterSave($insert, $changedAttributes);
     }
 
     /**
