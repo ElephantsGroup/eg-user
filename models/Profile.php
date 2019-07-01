@@ -329,6 +329,21 @@ class Profile extends ActiveRecord
   			$file_path = self::$upload_path . $this->user_id . '/' . $this->thumb;
   			if(file_exists($file_path))
   				unlink($file_path);
+			
+			$file_path_center = self::$upload_path . $this->id . '/cropped-center.jpg';
+            if(file_exists($file_path_center))
+                unlink($file_path_center);
+
+            $file_path_original = self::$upload_path . $this->id . '/original.jpg';
+            if(file_exists($file_path_original))
+            unlink($file_path_original);
+
+            foreach ($this->thumb_size as $key => $value)
+            {
+                $thumb_path = self::$upload_path . $this->id . '/'. $value['name'];
+                if(file_exists($thumb_path))
+                    unlink($thumb_path);
+            }
   		}
   		return parent::beforeDelete();
   	}
