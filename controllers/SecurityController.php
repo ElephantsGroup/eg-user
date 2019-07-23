@@ -25,6 +25,7 @@ use yii\filters\VerbFilter;
 use yii\helpers\Url;
 use yii\web\Response;
 use elephantsGroup\base\EGController;
+use Yii;
 
 /**
  * Controller that manages user authentication process.
@@ -156,10 +157,13 @@ class SecurityController extends EGController
 
         $this->trigger(self::EVENT_BEFORE_LOGIN, $event);
 
+        $this->title = Yii::t('config', 'Company Name') . ' - ' . Yii::t('app', 'Login');
+
         if ($model->load(\Yii::$app->getRequest()->post()) && $model->login()) {
             $this->trigger(self::EVENT_AFTER_LOGIN, $event);
             return $this->goBack();
         }
+
 
         return $this->render('login', [
             'model'  => $model,
@@ -175,6 +179,8 @@ class SecurityController extends EGController
     public function actionLogout()
     {
         $event = $this->getUserEvent(\Yii::$app->user->identity);
+
+        $this->title = Yii::t('config', 'Company Name') . ' - ' . Yii::t('app', 'Logout');
 
         $this->trigger(self::EVENT_BEFORE_LOGOUT, $event);
 

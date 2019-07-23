@@ -24,6 +24,7 @@ use yii\web\ForbiddenHttpException;
 use yii\web\NotFoundHttpException;
 use elephantsGroup\base\EGController;
 use yii\web\UploadedFile;
+use Yii;
 
 /**
  * SettingsController manages updating user settings (e.g. profile, email and password).
@@ -176,6 +177,8 @@ class SettingsController extends EGController
     			return $this->redirect(['profile/show', 'id' => $model->user_id]);
             }
         }
+
+        $this->title = Yii::t('config', 'Company Name') . ' - ' . Yii::t('app', 'Profile');
 
         return $this->render('profile', [
             'model' => $model,

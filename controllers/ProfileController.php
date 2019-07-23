@@ -15,7 +15,7 @@ use elephantsGroup\user\Finder;
 use yii\filters\AccessControl;
 use yii\web\NotFoundHttpException;
 use elephantsGroup\base\EGController;
-
+use Yii;
 /**
  * ProfileController shows users profiles.
  *
@@ -61,6 +61,7 @@ class ProfileController extends EGController
      */
     public function actionIndex()
     {
+        $this->title = Yii::t('config', 'Company Name') . ' - ' . Yii::t('app', 'Profile');
         return $this->redirect(['show', 'id' => \Yii::$app->user->getId()]);
     }
 
@@ -76,10 +77,11 @@ class ProfileController extends EGController
     {
         $profile = $this->finder->findProfileById($id);
 
+        $this->title = Yii::t('config', 'Company Name') . ' - ' . Yii::t('app', 'Profile');
+
         if ($profile === null) {
             throw new NotFoundHttpException();
         }
-
         return $this->render('show', [
             'profile' => $profile,
         ]);

@@ -20,7 +20,7 @@ use elephantsGroup\user\traits\EventTrait;
 use yii\filters\AccessControl;
 use yii\web\NotFoundHttpException;
 use elephantsGroup\base\EGController;
-
+use Yii;
 /**
  * RegistrationController is responsible for all registration process, which includes registration of a new account,
  * resending confirmation tokens, email confirmation and registration via social networks.
@@ -133,6 +133,8 @@ class RegistrationController extends EGController
 
         $this->performAjaxValidation($model);
 
+        $this->title = Yii::t('config', 'Company Name') . ' - ' . Yii::t('app', 'Register');
+
         if ($model->load(\Yii::$app->request->post()) && $model->register()) {
             $this->trigger(self::EVENT_AFTER_REGISTER, $event);
 
@@ -141,6 +143,7 @@ class RegistrationController extends EGController
                 'module' => $this->module,
             ]);
         }
+
 
         return $this->render('register', [
             'model'  => $model,

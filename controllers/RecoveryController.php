@@ -19,6 +19,7 @@ use elephantsGroup\user\traits\EventTrait;
 use yii\filters\AccessControl;
 use yii\web\NotFoundHttpException;
 use elephantsGroup\base\EGController;
+use Yii;
 
 /**
  * RecoveryController manages password recovery process.
@@ -118,6 +119,8 @@ class RecoveryController extends EGController
         $this->performAjaxValidation($model);
         $this->trigger(self::EVENT_BEFORE_REQUEST, $event);
 
+        $this->title = Yii::t('config', 'Company Name') . ' - ' . Yii::t('app', 'Recovery');
+
         if ($model->load(\Yii::$app->request->post()) && $model->sendRecoveryMessage()) {
             $this->trigger(self::EVENT_AFTER_REQUEST, $event);
             return $this->render('/message', [
@@ -145,6 +148,8 @@ class RecoveryController extends EGController
         if (!$this->module->enablePasswordRecovery) {
             throw new NotFoundHttpException();
         }
+
+        $this->title = Yii::t('config', 'Company Name') . ' - ' . Yii::t('app', 'Reset');
 
         /** @var Token $token */
         $token = $this->finder->findToken(['user_id' => $id, 'code' => $code, 'type' => Token::TYPE_RECOVERY])->one();
