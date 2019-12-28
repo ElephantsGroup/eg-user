@@ -48,20 +48,21 @@ $this->params['breadcrumbs'][] = $this->title;
                     'validateOnBlur' => false,
                 ]); ?>
 
-                <?= $form->field($model, 'first_name') ?>
+                <?= $form->field($model, 'first_name')->label(Yii::t('user', 'First Name')) ?>
 
-                <?= $form->field($model, 'last_name') ?>
+                <?= $form->field($model, 'last_name')->label(Yii::t('user', 'Last Name')) ?>
 
-                <?= $form->field($model, 'mobile') ?>
+                <?= $form->field($model, 'mobile')->label(Yii::t('user', 'Mobile')) ?>
 
-                <?= $form->field($model, 'public_email') ?>
+                <?= $form->field($model, 'public_email')->label(Yii::t('user', 'Public Email')) ?>
 
-                <?= $form->field($model, 'website') ?>
+                <?= $form->field($model, 'website')->label(Yii::t('user', 'Website')) ?>
 
-                <?= $form->field($model, 'location') ?>
+                <?= $form->field($model, 'location')->label(Yii::t('user', 'Location')) ?>
 
                 <?= $form
                     ->field($model, 'timezone')
+                    ->label(Yii::t('user', 'Time zone'))
                     ->dropDownList(
                         ArrayHelper::map(
                             Timezone::getAll(),
@@ -71,7 +72,7 @@ $this->params['breadcrumbs'][] = $this->title;
                     ); ?>
                 <?= $form->field($model, 'image_file')->label('')->fileInput() ?>
 
-                <?= $form->field($model, 'bio')->textarea() ?>
+                <?= $form->field($model, 'bio')->label(Yii::t('user', 'Bio'))->textarea() ?>
 
                 <div class="form-group">
                     <div class="col-lg-offset-3 col-lg-9">

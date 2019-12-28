@@ -188,4 +188,8 @@ return array (
   'Your password has been changed successfully.' => 'رمز عبور شما با موفقیت تغییر کرد.',
   'Your profile has been updated' => 'پروفایل شما بروز شد',
   '{0, date, MMMM dd, YYYY HH:mm}' => '{0, date, dd MMMM, YYYY HH:mm}',
+  'First Name' => 'نام',
+  'Last Name' => 'نام خانوادگی',
+  'Mobile' => 'موبایل',
+  'Public Email' => 'ایمیل عمومی',
 );
